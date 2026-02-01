@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sausage Sizzle Planner</title>
+    <title>Snagtastic Sizzle Suppliers Estimator</title>
     <style>
         body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
         .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
@@ -18,7 +18,7 @@
 <body>
 
 <div class="card">
-    <h2>🌭 SizzleCalc v1.0</h2>
+    <h2>🌭 Snagtastic v1.2</h2>
     <label>Estimated Foot Traffic</label>
     <input type="number" id="traffic" placeholder="e.g. 500" oninput="calculate()">
     
@@ -29,7 +29,7 @@
         <div class="item"><span>Sausages:</span> <span class="value" id="snags">0</span></div>
         <div class="item"><span>Loaves of Bread:</span> <span class="value" id="bread">0</span></div>
         <div class="item"><span>Onions (kg):</span> <span class="value" id="onions">0</span></div>
-        <div class="item"><span>Sauce (1.5L bottles):</span> <span class="value" id="sauce">0</span></div>
+        <div class="item"><span>Sauce (1L bottles):</span> <span class="value" id="sauce">0</span></div>
     </div>
 </div>
 
@@ -44,7 +44,7 @@ function calculate() {
     document.getElementById('snags').innerText = Math.ceil(sales * 1.05);
     document.getElementById('bread').innerText = Math.ceil(sales / 20);
     document.getElementById('onions').innerText = (sales * 0.04).toFixed(1);
-    document.getElementById('sauce').innerText = Math.ceil(sales * 0.015);
+    document.getElementById('sauce').innerText = Math.ceil(sales * 0.010);
 }
 </script>
 
