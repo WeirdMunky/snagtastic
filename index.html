@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sausage Sizzle Planner</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #d32f2f; margin-top: 0; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .results { margin-top: 20px; padding-top: 15px; border-top: 2px solid #eee; }
+        .item { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .value { font-weight: bold; color: #2e7d32; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🌭 SizzleCalc v1.0</h2>
+    <label>Estimated Foot Traffic</label>
+    <input type="number" id="traffic" placeholder="e.g. 500" oninput="calculate()">
+    
+    <label>Conversion Rate (%)</label>
+    <input type="number" id="conv" value="30" oninput="calculate()">
+
+    <div class="results" id="output">
+        <div class="item"><span>Sausages:</span> <span class="value" id="snags">0</span></div>
+        <div class="item"><span>Loaves of Bread:</span> <span class="value" id="bread">0</span></div>
+        <div class="item"><span>Onions (kg):</span> <span class="value" id="onions">0</span></div>
+        <div class="item"><span>Sauce (1.5L bottles):</span> <span class="value" id="sauce">0</span></div>
+    </div>
+</div>
+
+<script>
+function calculate() {
+    const traffic = document.getElementById('traffic').value || 0;
+    const conv = document.getElementById('conv').value / 100;
+    
+    const sales = traffic * conv;
+    
+    // Logic: 5% buffer on meat, 20 slices per loaf, 4kg onions per 100 snags
+    document.getElementById('snags').innerText = Math.ceil(sales * 1.05);
+    document.getElementById('bread').innerText = Math.ceil(sales / 20);
+    document.getElementById('onions').innerText = (sales * 0.04).toFixed(1);
+    document.getElementById('sauce').innerText = Math.ceil(sales * 0.015);
+}
+</script>
+
+</body>
+</html>
