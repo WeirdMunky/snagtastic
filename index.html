@@ -43,7 +43,7 @@ function calculate() {
     
     // Logic: 5% buffer on meat, 20 slices per loaf, 4kg onions per 100 snags
     document.getElementById('snags-n').innerText = Math.ceil(sales * 1.05);
-    document.getElementById('snags-kg').innerText = Math.ceil(sales * 0.06923);
+    document.getElementById('snags-kg').innerText = Math.ceil(sales * 0.07);
     document.getElementById('bread').innerText = Math.ceil(sales / 20);
     document.getElementById('onions').innerText = (sales * 0.04).toFixed(1);
     document.getElementById('sauce').innerText = Math.ceil(sales * 0.025);
